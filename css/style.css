@@ -1,0 +1,176 @@
+/* !Import */
+@font-face {
+    font-family:'barlM';
+    src: url(../fonts/BarlowSemiCondensed-Medium.ttf);
+    font-weight:500;
+}
+@font-face {
+    font-family:'barSB';
+    src: url(../fonts/BarlowSemiCondensed-SemiBold.ttf);
+    font-weight:600;
+}
+/* !Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* !Global Content */
+:root{
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+body{
+    background-color:var(--Light-grayish-blue) ;
+    font-size: 13px;
+    font-family: sans-serif;
+    line-height: 1.4;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img{
+    max-width: 100%;
+}
+/* !Body Content */
+/* ?======Start-Main====== */
+main {
+    height: 100vh;
+}
+
+main .container {
+    display: grid;
+    grid-template-areas: 
+        'card1 card1 card1 card1 card2 card5'
+        'card1 card1 card1 card1 card2 card5'
+        'card3 card4 card4 card4 card4 card5'
+        'card3 card4 card4 card4 card4 card5';
+        grid-gap: 2em;
+        
+}
+.card1 {
+    background: url(../images/bg-pattern-quotation.svg) no-repeat 80% 0%;
+    background-color: var(--Moderate-violet);
+    grid-area: card1;
+}
+
+.card2 {
+    background-color: var(--Very-dark-grayish-blue);
+    grid-area: card2;
+}
+
+.card3 {
+    background-color: var(--White);
+    grid-area: card3;
+}
+
+.card4 {
+    background-color: var(--Very-dark-blackish-blue);
+    grid-area: card4;
+}
+
+.card5 {
+    background-color: var(--White);
+    grid-area: card5;
+}
+
+/* ===Box-Design=== */
+.container .box {
+    border-radius: 0.5em;
+    padding: 2em;
+}
+/* ==User== */
+.box .user{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.box .user img{
+    border: 0.2em solid var(--White);
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.box .user span{
+    color: var(--Light-grayish-blue);
+    font-family:'barlM';
+}
+.box .user span p{
+    color: var(--Light-gray);
+}
+
+/* ==Details== */
+.box .detalis h2{
+    color: var(--Light-grayish-blue);
+    font-family:'barSB';
+    margin-bottom: 1em;
+}
+.box .detalis p{
+    color: var(--Light-gray);
+    font-family:'barSB';
+}
+.card3 .detalis h2
+,.card5 .detalis h2{
+    color: var(--Very-dark-blackish-blue);
+    font-family:'barSB';
+}
+
+
+
+
+
+/* !Media Query */
+/* Mobile: 320px - 480px */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container {
+        width: 350px;     
+    }
+    main .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+    }
+    .box{
+        grid-area: auto;
+    }
+
+}
+
+/* Tablet: 768px - 1024px */
+@media only screen and (min-width: 768px) and (max-width: 991px) 
+{
+    .container {
+        width: 750px; 
+    }
+    main .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-areas: none;
+    }
+    .box{
+        grid-area: auto;
+    }
+}
+
+/* Desktop: 1200px - 1440px */
+@media only screen and (min-width:992px ) {
+    .container {
+        width: 970px; 
+    }
+}
+
+/* Large Desktop: 1600px and above */
+@media only screen and (min-width: 1200px) {
+    .container{
+    width: 1170px;
+    }
+}
+    
